@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
 
 const Statistic = ({text, value}) => (
-  <tr>
+  <div>
+
     <td>{text}</td>
     <td>{value}</td>
-  </tr>
+  </div>
 )
 
 const Button = ({ onClick, text }) => (
@@ -26,12 +26,12 @@ const App = () => {
       <Button onClick={() => setNeutral(neutral + 1)} text="neutral" />
       <Button onClick={() => setBad(bad + 1)} text="bad" />
       <h1>statistics</h1>
-      Good: {good}
+      <Statistic text = "Good:" value = {good}/>
       <div>
-      Neutral: {neutral}
+      <Statistic text = "Bad:" value = {bad}/>
       </div>
       <div>
-        Bad: {bad}
+      <Statistic text = "Neutral:" value = {neutral}/>
       </div>
     
     </div>
